@@ -166,6 +166,12 @@ int sym_table_save_to_file(FILE *f)
             const char *sym_name = sym_get_name(i);
             VERBOSE("Unknown symbol [%s]\n", sym_name);
 
+            if (sym_name[0] == '\0')
+            {
+                VERBOSE("Unknown symbol had blank name; skipping...");
+                continue;
+            }
+
             // Look for the symbol in the main binary
             if (!main_binary_is_loaded())
             {
