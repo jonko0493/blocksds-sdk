@@ -222,6 +222,7 @@ typedef struct {
 #define R_ARM_GOT_BREL      26
 #define R_ARM_CALL          28
 #define R_ARM_JUMP24        29
+#define R_ARM_TLS_IE32      107
 
 typedef struct {
     Elf32_Word  st_name;  // Symbol name (.strtab index)

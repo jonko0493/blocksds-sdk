@@ -362,7 +362,8 @@ int main(int argc, char *argv[])
             uint8_t symbol_index = rel[r].r_info >> 8;
 
             if ((type != R_ARM_ABS32) && (type != R_ARM_THM_CALL) &&
-                (type != R_ARM_CALL) && (type != R_ARM_JUMP24))
+                (type != R_ARM_CALL) && (type != R_ARM_JUMP24) &&
+                (type != R_ARM_TLS_IE32))
             {
                 ERROR("Invalid relocation. Index %zu. Type %u\n", r, type);
                 goto error;
